@@ -1,0 +1,10 @@
+<h1>HELLO ADMIN</h1>
+
+<div *ngIf="_sections">
+  <div *ngFor="let sec of _sections" class="section">
+    <div>ID: {{ sec._id }}</div>
+    <h2>{{ sec.secTitle }}</h2>
+    <div>{{ sec.secContent }}</div>
+    <button [routerLink]="[sec._id]">Edit</button>
+  </div>
+</div>
