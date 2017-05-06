@@ -1,0 +1,15 @@
+input, textarea {
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.5rem;
+}
+textarea {
+    min-height: 300px;
+}
+button {
+    background: green;
+    color: #fff;
+    border: 0;
+    padding: 1rem 2rem;
+    text-transform: uppercase
+}
