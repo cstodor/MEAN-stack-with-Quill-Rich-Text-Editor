@@ -1,9 +1,3 @@
-<!--<div *ngIf="_section">
-  <div class="section">
-    <input type="text" formControlName="secTitle">
-    <textarea id="editor" formControlName="secContent">{{ _section.section.secContent }}</textarea>
-  </div>
-</div>-->
 <form [formGroup]="sectionDetailsForm" (ngSubmit)="onSectionUpdate()">
   <input type="text" formControlName="secTitle"><br/>
   <textarea id="editor" formControlName="secContent"></textarea><br/>

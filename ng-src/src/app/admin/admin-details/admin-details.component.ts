@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { FormGroup, FormControl } from "@angular/forms";
 import * as Quill from 'quill';
-let quill = new Quill('#editor');
+
 import { AdminService } from "../admin.service";
 
 @Component({
@@ -49,7 +49,7 @@ export class AdminDetailsComponent implements OnInit, OnDestroy {
           secContent: this._section.secContent
         });
 
-        setTimeout(this.initQuillEditor.bind(this), 100);
+        setTimeout(this.initQuillEditor.bind(this), 300);
       },
       error => this.errorMessage = <any>error);
 
