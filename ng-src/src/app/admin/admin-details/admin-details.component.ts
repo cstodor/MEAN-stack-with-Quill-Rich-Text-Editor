@@ -28,7 +28,11 @@ export class AdminDetailsComponent implements OnInit, OnDestroy {
   initQuillEditor(): void {
     let quill = new Quill('#editor', {
       modules: {
-        toolbar: true
+        toolbar: [
+          ['bold', 'italic'],
+          ['link', 'blockquote', 'code-block', 'image'],
+          [{ list: 'ordered' }, { list: 'bullet' }]
+        ]
       },
       theme: 'snow'
     });
@@ -53,7 +57,6 @@ export class AdminDetailsComponent implements OnInit, OnDestroy {
       },
       error => this.errorMessage = <any>error);
 
-
     this.sectionDetailsForm = new FormGroup({
       secTitle: new FormControl(),
       secContent: new FormControl()
@@ -67,7 +70,7 @@ export class AdminDetailsComponent implements OnInit, OnDestroy {
       secTitle: formField.secTitle.value,
       secContent: formField.secContent.value,
     }
-    
+
     let resultsNew = JSON.stringify(result);
 
     this.adminService.updateSection(this._secId, resultsNew).subscribe(
